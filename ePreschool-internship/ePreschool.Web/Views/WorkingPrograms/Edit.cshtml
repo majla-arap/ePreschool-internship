@@ -1,0 +1,50 @@
+﻿@using ePreschool.Web.ViewModels
+
+@inject IDropdown _dropdown
+@model WorkingProgramAddViewModel
+@{
+    this.Title(Translations.WorkingProgram);
+    this.MenuItem(MenuItem.WorkingPrograms);
+}
+<div class="row">
+    <div class="col-md-8 col-sm-12 col-xs-12 offset-md-2">
+        <form asp-action="Edit" asp-controller="WorkingPrograms" method="post">
+            <div class="card shadow">
+                <div class="card-header pt-10">
+                    <h1 class="fw-bolder text-dark align-items-center mb-9">@Translations.WorkingProgram</h1>
+                </div>
+                <div class="card-body">
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger fade show" role="alert" asp-validation-summary="All"></div>
+                    }
+                    <flash-messages></flash-messages>
+                    <div class="row ">
+                        <div class="col-md-12 pe-lg-12">
+                            <div class="row mb-5">
+                                <div class="col-md-7 fv-row">
+                                    <label class="fs-5 fw-bold mb-2">@Translations.Name</label>
+                                    <input type="text" class="form-control form-control-solid" asp-for="WorkingProgram.Name" required />
+                                     <input hidden type="text" class="form-control form-control-solid" asp-for="WorkingProgram.Id" />
+                                     <input hidden type="text" class="form-control form-control-solid" asp-for="WorkingProgram.CreatedAt" />
+                                     <input hidden type="text" class="form-control form-control-solid" asp-for="WorkingProgram.ModifiedAt" />
+                                </div>
+                                <div class="col-md-7 fv-row">
+                                    <label class="fs-5 fw-bold mb-2">@Translations.NumberOfHours</label>
+                                    <input type="text" class="form-control form-control-solid" asp-for="WorkingProgram.NumberOfHours" required />
+                                </div>
+                                <div class="col-md-7 fv-row">
+                                    <label class="fs-5 fw-bold mb-2">@Translations.Description</label>
+                                    <input type="text" class="form-control form-control-solid" asp-for="WorkingProgram.Description" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end py-6 px-9">
+                    <button class="btn btn-primary">@Translations.Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

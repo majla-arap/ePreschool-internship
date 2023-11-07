@@ -1,0 +1,59 @@
+﻿@using ePreschool.Web.ViewModels.Cities
+
+@inject IDropdown _dropdown
+@model CitiesAddViewModel
+@{
+    this.Title(Translations.Cities);
+    this.MenuItem(MenuItem.Cities);
+}
+<div class="row">
+    <div class="col-md-8 col-sm-12 col-xs-12 offset-md-2">
+        <form asp-action="Edit" asp-controller="Cities" method="post">
+            <div class="card shadow">
+                <div class="card-header pt-10">
+                    <h1 class="fw-bolder text-dark align-items-center mb-9">@Translations.Cities</h1>
+                </div>
+                <div class="card-body">
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger fade show" role="alert" asp-validation-summary="All"></div>
+                    }
+                    <flash-messages></flash-messages>
+                    <div class="row ">
+                        <div class="col-md-12 pe-lg-12">
+                            <div class="row mb-5">
+                                <div class="col-md-7 fv-row">
+                                    <label class="fs-5 fw-bold mb-2">@Translations.Name</label>
+                                    <input type="text" class="form-control form-control-solid" asp-for="City.Name" required />
+                                     <input hidden type="text" class="form-control form-control-solid" asp-for="City.Id" />
+                                     <input hidden type="text" class="form-control form-control-solid" asp-for="City.CreatedAt" />
+                                     <input hidden type="text" class="form-control form-control-solid" asp-for="City.ModifiedAt" />
+                                </div>
+                                <div class="col-md-5 fv-row">
+                                    <label class="fs-5 fw-bold mb-2">@Translations.Countries</label>
+                                    <select asp-items="@(await _dropdown.Countries(true))" id="CountriesList" asp-for="City.CountryId" data-control="select2" class="form-select form-select-solid form-select-lg fw-bolder select2-hidden-accessible" 
+                                            data-select2-id="select2-data-9-umw9">
+                                     </select>
+                                </div>
+                                <div class="row mb-12">
+                                    <div class="col-lg-6 fv-row">
+                                        <div class="d-flex align-items-center mt-3">
+                                            <label class="form-check form-check-inline form-check-solid">
+                                                <input class="form-check-input" asp-for="City.IsFavorite" type="checkbox" />
+                                                <span class="fw-bold ps-2 fs-6">@Translations.IsFavorite</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end py-6 px-9">
+                    <button class="btn btn-primary">@Translations.Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

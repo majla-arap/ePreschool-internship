@@ -1,0 +1,107 @@
+﻿@using ePreschool.Web.ViewModels
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@inject IDropdown _dropdown
+@model WorkingProgramIndexViewModel
+
+<div class="card">
+    <!--begin::Card header-->
+    <div class="card-header card-header-stretch border-bottom border-gray-200">
+        <!--begin::Title-->
+        <div class="card-title">
+            <h3 class="fw-bolder m-0"> @Translations.WorkingProgram</h3>
+        </div>
+        <div class="d-flex flex-wrap my-auto">
+
+            <a class="btn btn-link me-5" asp-action="Add" asp-controller="WorkingPrograms">@Translations.Add</a>
+        </div>
+    </div>
+    <!--end::Card header-->
+    <!--begin::Tab Content-->
+    <div class="tab-content">
+      
+        <!--begin::Tab panel-->
+        <div id="kt_billing_months" class="card-body p-0 tab-pane fade show active">
+            <!--begin::Table container-->
+            <div class="table-responsive">
+                <!--begin::Table-->
+                <table class="table table-row-bordered align-middle gy-4 gs-9">
+                    <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bolder bg-light bg-opacity-75">
+                        <tr>
+                            <td class="min-w-400px">@Translations.Name</td>
+                            <td class="min-w-200px">@Translations.NumberOfHours</td>
+                            <td class="min-w-50px">@Translations.Description</td>
+                            <td class="min-w-150px"></td>
+                        </tr>
+                    </thead>
+                    <tbody class="fw-bold text-gray-600">
+
+                        @foreach (var workingProgram in Model.WorkingPrograms)
+                        {
+                            <tr>
+                                <td>@workingProgram.Name</td>
+                                <td>@workingProgram.NumberOfHours</td>
+                                <td>@workingProgram.Description</td>
+                                <td class="text-end">
+                                    <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                        @Translations.Actions
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+                                    <span class="svg-icon svg-icon-5 m-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
+                                            </svg>
+                                        </span>
+
+                                        <!--end::Svg Icon-->
+                                </a>
+                                    <!--begin::Menu-->
+
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+                                        <!--begin::Menu item-->
+                                    <div class="menu-item px-3">
+                                            <a href="@Url.Action("Edit",new {id = @workingProgram.Id})" class="menu-link px-3">@Translations.Edit</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                    <div class="menu-item px-3">
+                                            <a onclick="deleteWorkingProgram(@workingProgram.Id);" class="menu-link px-3">@Translations.Delete</a>
+                                        </div>
+                                        <!--end::Menu item-->
+
+                                </div>
+                                    <!--end::Menu-->
+                            </td>
+
+                            </tr>
+                        }
+                        <!--end::Table row-->
+                    </tbody>
+                </table>
+                <!--end::Table-->
+            </div>
+            <!--end::Table container-->
+        </div>
+        <!--end::Tab Content-->
+    </div>
+</div>
+
+@section Scripts{
+<script>
+
+      function deleteWorkingProgram(id){
+         $.post({
+            url: "@Url.Action("Delete", "WorkingPrograms")",
+            data: {
+                id: id,
+            },
+            success: () => {
+                location.reload(true);
+            }
+         });
+      }
+</script>
+}

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePreschool.Web", "ePreschool.Web\ePreschool.Web.csproj", "{28226102-A24B-430B-9C96-F4C29F119CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePreschool.Core", "ePreschool.Core\ePreschool.Core.csproj", "{62D4CD29-6B47-4E82-A9D8-0422366157E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePreschool.Infrastructure", "ePreschool.Infrastructure\ePreschool.Infrastructure.csproj", "{F2E66444-75D0-42A9-872B-E93321D388B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePreschool.Service", "ePreschool.Service\ePreschool.Service.csproj", "{C339C82B-EB8D-481C-8796-646181EEBC8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePreschool.Api", "ePreschool.Api\ePreschool.Api.csproj", "{735DC8F5-2BD4-4BFF-B672-FB853DDC4572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ePreschool.Shared", "ePreschool.Shared\ePreschool.Shared.csproj", "{DACF3753-A6F7-46C4-BAD4-1CF7BA431FE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28226102-A24B-430B-9C96-F4C29F119CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28226102-A24B-430B-9C96-F4C29F119CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28226102-A24B-430B-9C96-F4C29F119CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28226102-A24B-430B-9C96-F4C29F119CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D4CD29-6B47-4E82-A9D8-0422366157E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D4CD29-6B47-4E82-A9D8-0422366157E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D4CD29-6B47-4E82-A9D8-0422366157E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D4CD29-6B47-4E82-A9D8-0422366157E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E66444-75D0-42A9-872B-E93321D388B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E66444-75D0-42A9-872B-E93321D388B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E66444-75D0-42A9-872B-E93321D388B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E66444-75D0-42A9-872B-E93321D388B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C339C82B-EB8D-481C-8796-646181EEBC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C339C82B-EB8D-481C-8796-646181EEBC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C339C82B-EB8D-481C-8796-646181EEBC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C339C82B-EB8D-481C-8796-646181EEBC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{735DC8F5-2BD4-4BFF-B672-FB853DDC4572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735DC8F5-2BD4-4BFF-B672-FB853DDC4572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735DC8F5-2BD4-4BFF-B672-FB853DDC4572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735DC8F5-2BD4-4BFF-B672-FB853DDC4572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACF3753-A6F7-46C4-BAD4-1CF7BA431FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACF3753-A6F7-46C4-BAD4-1CF7BA431FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACF3753-A6F7-46C4-BAD4-1CF7BA431FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACF3753-A6F7-46C4-BAD4-1CF7BA431FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC2F81A9-C8BD-40F8-A4D3-822C15507DC1}
+	EndGlobalSection
+EndGlobal

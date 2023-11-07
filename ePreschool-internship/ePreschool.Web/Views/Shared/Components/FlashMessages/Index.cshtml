@@ -1,0 +1,12 @@
+﻿@using ePreschool.Web.Services.FlashMessages
+
+@model List<FlashMessage>
+
+@foreach (var item in Model)
+{
+    <div class="alert alert-@(item.Status == FlashMessageStatus.Success ? "success" : "danger")" alert-dismissible show fade>
+        <strong>@item.Title</strong>
+        <br>
+        @item.Message
+    </div>
+}
